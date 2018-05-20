@@ -1,0 +1,17 @@
+<div class="board">
+
+  <!-- Add click event binding for this button... -->
+  <button
+    style="margin: 20px 0"
+    (click)="changeValueTaskForm()"
+  >
+    New Task
+  </button>
+  <task-form [showTaskForm]="showTaskForm" (saveInput)="saveInput($event)"></task-form>
+
+  <div class="lists">
+    <div  *ngFor="let statusType of statusList">
+      <task-list [statusType]="statusType"></task-list>
+    </div>
+  </div>
+</div>

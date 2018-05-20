@@ -1,0 +1,19 @@
+
+<div class="task">
+  <div class="header">
+    <div>
+      <!-- Render title here... -->
+      {{ task.title }}
+    </div>
+    <!-- Markup for dropdown menu here... -->
+
+    <select (change)="updateTask($event.target.value)">
+      <option [selected]="status === task.status" value="{{ status }}" *ngFor="let status of statusList">{{ status }}</option>
+    </select>
+  </div>
+  <hr>
+  <div class="body">
+    <!-- Render description here... -->
+    {{ task.description }}
+  </div>
+</div>
